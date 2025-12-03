@@ -1,0 +1,11 @@
+/* Custom CSS (optional) */
+
+/* Example: Increase font size of message box text */
+#message-box {
+    font-size: 0.875rem; /* 14px */
+}
+
+/* Add smooth transitions to weather card hover */
+#weather-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

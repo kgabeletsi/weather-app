@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Weather App</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4f46e5',
+                        'background-dark': '#111827',
+                        'card-dark': '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background-dark min-h-screen flex items-center justify-center p-4 font-sans text-white">
+
+    <!-- Main Weather Card Container -->
+    <div id="weather-card" class="bg-card-dark shadow-2xl rounded-xl p-8 max-w-lg w-full transform transition duration-500 hover:shadow-primary/50">
+
+        <h1 class="3xl font-extrabold text-center mb-6 text-primary">Weather Dashboard</h1>
+
+        <!-- Input Section -->
+        <div class="flex space-x-3 mb-6">
+            <input type="text" id="city-input" placeholder="Enter city name (e.g., London)"
+                   class="flex-grow p-3 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+            <button id="search-button"
+                    class="px-5 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-150 active:scale-95">
+                Search
+            </button>
+        </div>
+
+        <!-- Message/Error Box -->
+        <div id="message-box" class="hidden p-3 mb-4 rounded-lg text-sm transition duration-300" role="alert"></div>
+
+        <!-- Weather Display Section -->
+        <div id="weather-display" class="hidden text-center">
+            <p id="city-name" class="text-4xl font-bold mb-1"></p>
+            <p id="date-time" class="text-sm text-gray-400 mb-6"></p>
+
+            <div class="flex flex-col items-center justify-center mb-6">
+                <img id="weather-icon" alt="Weather icon" class="w-24 h-24 mb-2">
+                <p id="temperature" class="text-7xl font-light"></p>
+                <p id="description" class="text-xl capitalize text-gray-300"></p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 border-t border-gray-700 pt-6">
+                <div class="p-3 bg-gray-700 rounded-lg">
+                    <p class="text-xs font-medium text-gray-400">Humidity</p>
+                    <p id="humidity" class="text-2xl font-semibold mt-1"></p>
+                </div>
+                <div class="p-3 bg-gray-700 rounded-lg">
+                    <p class="text-xs font-medium text-gray-400">Wind Speed</p>
+                    <p id="wind-speed" class="text-2xl font-semibold mt-1"></p>
+                </div>
+                <div class="p-3 bg-gray-700 rounded-lg">
+                    <p class="text-xs font-medium text-gray-400">Feels Like</p>
+                    <p id="feels-like" class="text-2xl font-semibold mt-1"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/script.js"></script>
+</body>
+</html>
